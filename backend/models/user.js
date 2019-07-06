@@ -24,7 +24,8 @@ const User = new Schema({
     default: 0
   },
   wishLists: {
-    type: [Object]
+    type: [Object],
+    default: []
   },
   interactions: {
     type: [String]

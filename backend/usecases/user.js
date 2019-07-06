@@ -9,3 +9,13 @@ const create = ({ name, lastname, email, address, role }) => {
     role
   })
 }
+
+const getById = ( id ) => User.findById(id)
+
+const update = (id, { name, lastname, email, address, role }) => {
+  const userUpdated = User.findByIdAndUpdate(id, { name, lastname, email, address, role })
+}
+
+const createAWhishList = () => {
+  
+}
