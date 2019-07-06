@@ -6,7 +6,7 @@ const User = new Schema({
     type: String,
     required: true
   },
-  apellido: {
+  lastname: {
     type: String,
     required: true
   },
@@ -18,7 +18,7 @@ const User = new Schema({
     type: [Object],
     required: true
   },
-  rol: {
+  role: {
     type: [Number],
     required: true,
     default: 0
