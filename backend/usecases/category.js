@@ -15,6 +15,7 @@ const getNameById = ( id ) => Category.findById( id )
 const deleteById = ( id ) => Category.remove({ id })
 
 module.exports = {
+  create,
   getAll,
   getNameById,
   deleteById
