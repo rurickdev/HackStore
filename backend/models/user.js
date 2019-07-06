@@ -29,6 +29,9 @@ const User = new Schema({
   },
   interactions: {
     type: [String]
+  },
+  personality: {
+    type: Object
   }
 })
 
