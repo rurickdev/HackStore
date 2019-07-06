@@ -1,7 +1,11 @@
 const Category = require('../models/category')
 
 const create = ( name ) => {
-  const nameNoraliced = name
+  const lowecaseName = name.toLowerCase()
+
+  const category = Category.create({ name: lowecaseName })
+
+  return category
 }
 
 const getAll = () => Category.find()
