@@ -1,0 +1,107 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.logo-font {
+  font-family: "Rock Salt", cursive;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.black-overlay {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.activate-chatbot {
+  width: 50px;
+  height: 50px;
+  border: 1px solid red;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 255, 0.1);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 3px 3px 3px #cdcdcd;
+  border: 1px solid #333;
+  z-index: 9998;
+}
+
+.chatbot-wrapper {
+  position: fixed;
+  top: 0;
+  right: -30%;
+  background: #dadada;
+  height: 100vh;
+  z-index: 9999;
+  width: 30%;
+  border: 1px solid #333;
+  transition: all 0.75s ease;
+}
+.chatbot-wrapper .chatbot-header {
+  height: 50px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  font-size: 18px;
+  background: white;
+}
+.chatbot-wrapper .chatbot-body {
+  padding: 15px;
+  height: calc(100vh - 120px);
+}
+.chatbot-wrapper .chatbot-body .chatbot-dialog, .chatbot-wrapper .chatbot-body .user-dialog {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+.chatbot-wrapper .chatbot-body .chatbot-dialog i, .chatbot-wrapper .chatbot-body .user-dialog i {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.chatbot-wrapper .chatbot-body .chatbot-dialog span, .chatbot-wrapper .chatbot-body .user-dialog span {
+  border: 1px solid #333;
+  padding: 15px;
+  border-radius: 15px;
+  width: 100%;
+  background: white;
+}
+.chatbot-wrapper .chatbot-body .user-dialog span {
+  width: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background: rgba(0, 0, 255, 0.1);
+}
+.chatbot-wrapper .chatbot-form {
+  width: 100%;
+  border-top: 1px solid #333;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.chatbot-wrapper .chatbot-form i {
+  margin-left: 15px;
+  align-self: center;
+  margin-bottom: 5px;
+}
+.chatbot-wrapper.shown {
+  right: 0;
+}
+
+/*# sourceMappingURL=main.css.map */
