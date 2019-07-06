@@ -1,7 +1,7 @@
 const Category = require('../models/category')
 
 const create = ( name ) => {
-  const nameNoraliced = name.
+  const nameNoraliced = name
 }
 
 const getAll = () => Category.find()
