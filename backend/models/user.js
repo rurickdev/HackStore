@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
-const Usuario = new Schema({
+const User = new Schema({
   name: {
     type: String,
     required: true
@@ -32,5 +32,5 @@ const Usuario = new Schema({
 })
 
 module.exports = {
-  Usuario
+  Usuario: User
 }
