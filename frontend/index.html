@@ -14,7 +14,7 @@
 		<div class="activate-chatbot">
 			<i class="fas fa-question-circle"></i>
 		</div>
-		<div class="chatbot-wrapper">
+		<div class="chatbot-wrapper" onload="InitializeConversation()">
 			<div class="chatbot-header">
 				<span class="logo-font">Hackbot</span>
 				<i class="far fa-times-circle cursor-pointer close-chatbot"></i>
@@ -22,15 +22,16 @@
 			<div class="chatbot-body">
 				<div class="chatbot-dialog">
 					<i class="fas fa-robot"></i>
-					<span>¡Hola! ¿Cómo puedo ayudarte?</span>
+					<span id="divPosts"></span>
 				</div>
-				<div class="user-dialog">
+				<!-- <div class="user-dialog">
 					<span>¡Hola!</span>
-				</div>
+				</div> -->
 			</div>
 			<div class="chatbot-form">
-				<input id="user-question" type="text" class="form-control" placeholder="Pregúntame algo">
-				<i id="send-chatbot-message" class="fas fa-paper-plane cursor-pointer"></i>
+				<input type="hidden" id="hiddenUsername">
+				<input  type="text" class="form-control" placeholder="Pregúntame algo" id="watson_input" onkeydown = "if (event.keyCode == 13) {document.getElementById('button_Converse').click()}">
+				<i class="fas fa-paper-plane cursor-pointer" onClick="SendMessage()" id="button_Converse" value="Enviar"></i>
 			</div>
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">

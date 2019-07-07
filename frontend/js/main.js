@@ -1,4 +1,4 @@
-let chatbotJson = [
+/* let chatbotJson = [
 	{
 		sender:"chatbot",
 		message:"¡Hola! ¿Cómo puedo ayudarte?"
@@ -24,7 +24,7 @@ const addMessage = (message)=>{
 
 $("#send-chatbot-message").on("click",() => {
 	sendQuestion();
-})
+}) */
 
 $(".activate-chatbot, .close-chatbot").on("click",()=>{
 	console.log("aC")
