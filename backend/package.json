@@ -1,29 +1,22 @@
 {
-  "name": "paloozastore",
-  "version": "1.0.0",
-  "description": "tienda super personalizada",
-  "main": "index.js",
+  "name": "lgbc-devwk-recipe",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skintigth/HackStore.git"
-  },
-  "keywords": [
-    "personality",
-    "insight",
-    "ibm",
-    "hackapalooza"
-  ],
-  "author": "kodeboldos",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/skintigth/HackStore/issues"
-  },
-  "homepage": "https://github.com/skintigth/HackStore#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "cfenv": "^1.2.2",
+    "cloudant": "^1.7.1",
     "express": "^4.17.1",
-    "mongoose": "^5.6.3"
+    "mongoose": "^5.6.3",
+    "express-session": "^1.15.6",
+    "pug": "^2.0.0-rc.2",
+    "watson-developer-cloud": "^3.13.0"
+  },
+  "repository": {},
+  "engines": {
+    "node": "8.x"
   }
 }
