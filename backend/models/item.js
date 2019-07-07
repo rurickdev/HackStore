@@ -3,22 +3,32 @@ const { Schema } = mongoose
 
 const Item = new Schema({
   name: {
-    type: String
+    type: String,
+    required: true
   },
   description: {
-    type: Text
+    type: Text,
+    required: true
   },
   price: {
-    type: Number
+    type: Number,
+    required: true
   },
   shippingCost: {
-    type: Number
+    type: Number,
+    required: true
   },
   keyWords: {
-    type: [String]
+    type: [String],
+    required: true
   },
-  pictires: {
-    type: [String]
+  category: {
+    type: [String],
+    required: true
+  },
+  pictures: {
+    type: [String],
+    required: true
   }
 
 })
