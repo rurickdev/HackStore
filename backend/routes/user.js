@@ -26,7 +26,6 @@ router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body
         const payload = await user.login(email, password)
-        console.log(payload);
         res.json({
             success: true,
             message: 'logged in successfully',
