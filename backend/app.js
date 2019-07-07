@@ -15,7 +15,7 @@ var app = express();
 var appEnv = cfenv.getAppEnv();
 var session = require('express-session');
 
-const itemsRoutes = require('./routes/item')
+/* const itemsRoutes = require('./routes/item') */
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
@@ -199,4 +199,5 @@ app.get("/calldatabase", function (req, res) {
 
 app.use('/test', (req, res) => {
   console.log('test successful')
+  
 })
