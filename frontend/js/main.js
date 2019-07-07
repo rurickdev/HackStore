@@ -18,7 +18,6 @@ const addMessage = (message)=>{
 	$(".chatbot-body").append(`
 		<div class="user-dialog">
 			<span>${message}</span>
-			<i class="fas fa-robot"></i>
 		</div>
 	`)
 }
