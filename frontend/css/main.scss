@@ -31,6 +31,10 @@ $lightPurple: #9F6BB3;
 	box-shadow:5px 5px 5px #acacac;
 }
 
+.bg-gradient{
+	background:linear-gradient(90deg, $mainPurple, $secondaryPurple);
+}
+
 .black-overlay{
 	width:100vw;
 	height:100vh;

@@ -1,3 +1,22 @@
+const toggleForm = ()=>{
+	$(".register-field").toggleClass("d-none");
+	if($("#submit-btn").hasClass("register")){
+		$("#submit-btn").text("Ingresar")
+	} else {
+		$("#submit-btn").text("Registrarse")
+	}
+}
+
+const launchModal = (modalId)=>{
+	$(modalId).modal("show");
+}
+
+const loadContent = (contentUrl) => {
+	$(".content-wrapper").load(contentUrl)
+}
+
+launchModal("#login-modal")
+
 let chatbotJson = [
 	{
 		sender:"chatbot",
