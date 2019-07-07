@@ -10,212 +10,37 @@
 		<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
-	<body>
-		<div class="activate-chatbot">
-			<i class="fas fa-question-circle"></i>
-		</div>
-		<div class="chatbot-wrapper" onload="InitializeConversation()">
-			<div class="chatbot-header">
-				<span class="logo-font">Hackbot</span>
-				<i class="far fa-times-circle cursor-pointer close-chatbot"></i>
-			</div>
-			<div class="chatbot-body">
-				<div class="chatbot-dialog">
-					<i class="fas fa-robot"></i>
-					<span id="divPosts"></span>
-				</div>
-				<!-- <div class="user-dialog">
-					<span>¡Hola!</span>
-				</div> -->
-			</div>
-			<div class="chatbot-form">
-				<input type="hidden" id="hiddenUsername">
-				<input  type="text" class="form-control" placeholder="Pregúntame algo" id="watson_input" onkeydown = "if (event.keyCode == 13) {document.getElementById('button_Converse').click()}">
-				<i class="fas fa-paper-plane cursor-pointer" onClick="SendMessage()" id="button_Converse" value="Enviar"></i>
-			</div>
-		</div>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand logo-font" href="#">HackStore</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Categorías <br> recomendadas</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Productos <br> recomendados</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Mis listas <br> de compras</a>
-					</li>
-				</ul>
-			</div>
-			<form class="d-flex my-2 my-lg-0">
-				<input class="form-control" type="search" placeholder="Buscar un producto o categoría">
-				<i class="fas fa-search"></i>
-			</form>
-		</nav>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-12">
-					<div class="bd-example">
-						<div id="top-five-slider" class="carousel slide" data-ride="carousel">
-							<div class="carousel-inner ">
-								<div class="carousel-item active">
-									<div class="product-wrapper d-flex align-items-center w-100 justify-content-around">
-										<img src="img/top5/top1.jpg" alt="" class="product-image w-50">
-										<div class="description-wrapper">
-											<h3 class="product-title my-3">Bocina Bluetooth Bosé</h3>
-											<p class="product-features font-italic my-3">Sé el alma de la fiesta con estas increibles bocinas</p>
-											<span class="product-price d-block text-success text-right font-weight-bold my-3">$ 5,200.00</span>
-											<div class="btn btn-primary my-3 ml-auto w-50 d-inline">Agregar al carrito</div>
-										</div>
-									</div>
-								</div>
-								<div class="carousel-item">
-									<div class="product-wrapper d-flex align-items-center w-100 justify-content-around">
-										<img src="img/top5/top2.jpg" alt="" class="product-image w-50">
-										<div class="description-wrapper">
-											<h3 class="product-title my-3">Bocina Bluetooth Bosé</h3>
-											<p class="product-features font-italic my-3">Sé el alma de la fiesta con estas increibles bocinas</p>
-											<span class="product-price d-block text-success text-right font-weight-bold my-3">$ 5,200.00</span>
-											<div class="btn btn-primary my-3 ml-auto w-50 d-inline">Agregar al carrito</div>
-										</div>
-									</div>
-								</div>
-								<div class="carousel-item">
-									<div class="product-wrapper d-flex align-items-center w-100 justify-content-around">
-										<img src="img/top5/top3.jpg" alt="" class="product-image w-50">
-										<div class="description-wrapper">
-											<h3 class="product-title my-3">Bocina Bluetooth Bosé</h3>
-											<p class="product-features font-italic my-3">Sé el alma de la fiesta con estas increibles bocinas</p>
-											<span class="product-price d-block text-success text-right font-weight-bold my-3">$ 5,200.00</span>
-											<div class="btn btn-primary my-3 ml-auto w-50 d-inline">Agregar al carrito</div>
-										</div>
-									</div>
-								</div>
+
+	<body class="bg-light">
+		<div class="content-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 offset-4 d-flex align-items-center vh-100">
+						<form class="w-100">
+							<h3 class="text-center">Bienvenido a</h3>
+							<h2 class="logo-font mt-3 mb-5 text-center text-purple">SmartStore</h2>
+							<div class="form-group">
+								<label for="user-mail">Ingresa tu email</label>
+								<input type="email" class="form-control" id="user-mail" aria-describedby="emailHelp" placeholder="example@email.com">
 							</div>
-							<div class="slider-control-wrapper">
-								<a class="carousel-control-prev" href="#top-five-slider" role="button" data-slide="prev">
-									<i class="fas fa-arrow-circle-left text-secondary"></i>
-								</a>
-								<ol class="carousel-indicators m-0">
-									<li data-target="#top-five-slider" data-slide-to="0" class="active"></li>
-									<li data-target="#top-five-slider" data-slide-to="1"></li>
-									<li data-target="#top-five-slider" data-slide-to="2"></li>
-								</ol>
-								<a class="carousel-control-next" href="#top-five-slider" role="button" data-slide="next">
-									<i class="fas fa-arrow-circle-right text-secondary"></i>
-								</a>
+							<div class="form-group register-field d-none">
+								<label for="confirm-mail">Confirma tu email</label>
+								<input type="email" class="form-control" id="confirm-mail" aria-describedby="emailHelp" placeholder="example@email.com">
 							</div>
-						</div>
+							<div class="form-group">
+								<label for="user-password">Contraseña</label>
+								<input type="password" class="form-control" id="user-password" placeholder="Ingresa tu contraseña">
+							</div>
+							<div class="form-group register-field d-none">
+								<label for="confirm-password">Confirmar Contraseña</label>
+								<input type="password" class="form-control" id="confirm-password" placeholder="Confirma tu contraseña">
+							</div>
+							<div id="submit-btn" class="btn btn-primary ml-auto btn-block" onclick="window.open('views/dashboard.html')">Ingresar</div>
+							<p class="mt-5 text-right register-field">¿Eres nuevo por aquí? <span class="text-underline text-purple toggle-form" onclick="toggleForm()">¡Regístrate!</span></p>
+						</form>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="container">
-			<h2>Categorías recomendadas:</h2>
-			<div class="row">
-				<div class="col-12">
-					<div class="border rounded p-3 suggested-categories">
-						<div class="category-wrapper">
-							<img src="https://mk0conjrri8axjmrl.kinstacdn.com/wp-content/uploads/sites/2/2018/06/instant-film-category-418x418.jpg" alt="" class="category-img">
-							<h3 class="category-title"></h3>
-							<ul class="category-options">
-								<li>Option 1</li>
-								<li>Option 2</li>
-								<li>Option 3</li>
-							</ul>
-						</div>
-						<div class="category-wrapper">
-							<img src="https://mk0conjrri8axjmrl.kinstacdn.com/wp-content/uploads/sites/2/2018/06/instant-film-category-418x418.jpg" alt="" class="category-img">
-							<h3 class="category-title"></h3>
-							<ul class="category-options">
-								<li>Option 1</li>
-								<li>Option 2</li>
-								<li>Option 3</li>
-							</ul>
-						</div>
-						<div class="category-wrapper">
-							<img src="https://mk0conjrri8axjmrl.kinstacdn.com/wp-content/uploads/sites/2/2018/06/instant-film-category-418x418.jpg" alt="" class="category-img">
-							<h3 class="category-title"></h3>
-							<ul class="category-options">
-								<li>Option 1</li>
-								<li>Option 2</li>
-								<li>Option 3</li>
-							</ul>
-						</div>
-						<div class="category-wrapper">
-							<img src="https://mk0conjrri8axjmrl.kinstacdn.com/wp-content/uploads/sites/2/2018/06/instant-film-category-418x418.jpg" alt="" class="category-img">
-							<h3 class="category-title"></h3>
-							<ul class="category-options">
-								<li>Option 1</li>
-								<li>Option 2</li>
-								<li>Option 3</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<h2>Productos recomendados:</h2>
-			<div class="row">
-				<div class="col-12">
-					<div class="suggested-products">
-						<div class="row">
-							<div class="col-sm-4">
-								<div class="card">
-									<img src="https://cdn.shopify.com/s/files/1/2547/8010/products/Full_Front_web_op_2000x.png?v=1556663643" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-										<a href="#" class="btn btn-primary">Go somewhere</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="card">
-									<img src="https://cdn.shopify.com/s/files/1/2547/8010/products/Full_Front_web_op_2000x.png?v=1556663643" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-										<a href="#" class="btn btn-primary">Go somewhere</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="card">
-									<img src="https://cdn.shopify.com/s/files/1/2547/8010/products/Full_Front_web_op_2000x.png?v=1556663643" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-										<a href="#" class="btn btn-primary">Go somewhere</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container-fluid">
-			<footer class="row">
-				<div class="col-sm-6">
-					<h4>Mantente en contacto</h4>
-					<div class="contact-data phone"><i class="fas fa-phone"></i>55-45-78-85-96</div>
-					<div class="contact-data mail"><i class="fas fa-envelope-open-text"></i>contact@hackstore.com</div>
-					<div class="contact-data social-networks">
-						<i class="fab fa-facebook"></i>
-						<i class="fab fa-twitter"></i>
-						<i class="fab fa-instagram"></i>
-					</div>
-				</div>
-				<div class="col-sm-6"></div>
-			</footer>
 		</div>
 		<div class="black-overlay"></div>
 		<script src="https://kit.fontawesome.com/97667b5775.js"></script>
