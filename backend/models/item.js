@@ -22,7 +22,7 @@ const Item = new Schema({
     type: [String],
     required: true
   },
-  category: {
+  categories: {
     type: [String],
     required: true
   },
