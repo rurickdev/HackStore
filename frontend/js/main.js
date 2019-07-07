@@ -15,8 +15,9 @@ const loadContent = (contentUrl) => {
 	$(".content-wrapper").load(contentUrl)
 }
 
-launchModal("#login-modal")
-
+$("#send-chatbot-message").on("click",() => {
+	sendQuestion();
+})  
 
 $(".activate-chatbot, .close-chatbot").on("click",()=>{
 	console.log("aC")

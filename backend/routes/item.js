@@ -48,7 +48,23 @@ router.post('/new', async (req, res) => {
       error: [error]
     })
   }
-  res.json({ name, description, price, shippingCost, keyWords, categories, pictures, seller });
+});
+
+router.get('/all', async (req, res) => {
+  try {
+    const items = await Item.getAll();
+    res.json({
+      success: true,
+      payload: items
+    });
+  } catch (error) {
+    res.status(500);
+    res.json({
+      success: false,
+      message: `Could not find items`,
+      error: [error]
+    })
+  }
 });
 
 module.exports = router;
