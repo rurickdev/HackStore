@@ -1,11 +1,11 @@
-const Item = require('../models/item')
+const Item = require('../models/item').model
 
-const create = ({ name, desciption, price, shippingCost, keyWords, categories, pictures }) =>{
+const create = ({ name, desciption, price, shippingCost, keyWords, categories, pictures }) => {
   const item = Item.create({ name, desciption, price, shippingCost, keyWords, categories, pictures })
 }
 
 const getKeyWordsById = (id) => {
-  const { keyWords }= Item.findById(id)
+  const { keyWords } = Item.findById(id)
 }
 
 const getItemById = (id) => {

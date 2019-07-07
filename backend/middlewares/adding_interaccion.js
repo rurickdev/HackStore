@@ -7,8 +7,8 @@ const addingInteraction = async (req, res, next) => {
   let keyWordsString = ''
   const { name, keyWords } = await Item.getItemById(itemId)
 
-  keyWords.forEach( keyWord => {
-    keyWords = keyWords + ', '+ keyWord
+  keyWords.forEach(keyWord => {
+    keyWords = keyWords + ', ' + keyWord
   });
 
   switch (interactionType) {
@@ -28,10 +28,10 @@ const addingInteraction = async (req, res, next) => {
       statement = `No me interesa ${name} con las siguientes caracteristicas ${keyWordsString}`
       break
     default:
-      //code here
+    //code here
   }
 
-  const interaction = await Interaction.create({ userId, interaccion: statement })
+  const newInteraction = await Interaction.create({ userId, interaccion: statement })
 
   next()
 }

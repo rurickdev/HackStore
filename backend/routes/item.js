@@ -1,12 +1,16 @@
-const AddInteraction = require('../middlewares/adding_interaccion')
+const express = require('express');
+
+const router = express.Router();
+
+const AddInteraction = require('../middlewares/adding_interaccion').addingInteraction
 const Item = require('../usecases/item')
 
-server.get('/item', AddInteraction, (req, res) => {
+router.get('/', AddInteraction, (req, res) => {
   const { itemId } = req.body
 
   const item = Item.getItemById(itemId)
 
-  if (item){  
+  if (item) {
     res.body = {
       success: true,
       payload: {
@@ -20,10 +24,12 @@ server.get('/item', AddInteraction, (req, res) => {
         seller: item.seller
       }
     }
-  }else{
+  } else {
     res.body = {
       success: false,
       message: `Item not found`
     }
   }
 })
+
+module.exports = router;
