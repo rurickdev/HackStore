@@ -20,6 +20,10 @@ const updatePersonality = (userId, personality) => {
   const updatedUser = User.findByIdAndUpdate(userId, personality)
 }
 
+const getHistory = (userId) => {
+  const user = User.findById()
+}
+
 const addWhishList = ( id, { name, items, public }) => {
   const { wishLists } = User.findById(id)
   const newWishList = { name, items, public }

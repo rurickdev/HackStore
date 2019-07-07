@@ -27,9 +27,6 @@ const User = new Schema({
     type: [Object],
     default: []
   },
-  interactions: {
-    type: [String]
-  },
   personality: {
     type: Object
   }
