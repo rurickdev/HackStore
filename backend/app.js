@@ -16,8 +16,16 @@ var app = express();
 var appEnv = cfenv.getAppEnv();
 var session = require('express-session');
 
+
 /* const itemsRoutes = require('./routes/item') */
 app.use(cors())
+
+const db = require('./lib/db');
+
+const itemsRoutes = require('./routes/item');
+const userRoutes = require('./routes/user');
+
+
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());       // to support JSON-encoded bodies
@@ -175,6 +183,9 @@ function callback(res, username, message, watsonresponse, additionalText) {
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function () {
   console.log("server starting on " + appEnv.url);
+  db.connect()
+    .then(() => console.log('DB connected'))
+    .catch(() => console.error('DB error while connecting'))
 });
 
 app.get("/calldatabase", function (req, res) {
@@ -198,7 +209,5 @@ app.get("/calldatabase", function (req, res) {
   res.send(result)
 })
 
-app.use('/test', (req, res) => {
-  console.log('test successful')
-  
-})
+app.use('/', userRoutes);
+app.use('/items', itemsRoutes);

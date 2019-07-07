@@ -7,7 +7,7 @@ const Item = new Schema({
     required: true
   },
   description: {
-    type: Text,
+    type: String,
     required: true
   },
   price: {
@@ -37,6 +37,7 @@ const Item = new Schema({
 
 })
 
-model.exports = { 
-  Item 
+module.exports = {
+  model: mongoose.model('Item', Item),
+  Item
 }

@@ -1,7 +1,7 @@
 const Interaction = require('../models/interaction')
 
 const create = ({ userId, interaction }) => {
-  const interaction = Interaction.create({
+  const newInteraction = Interaction.create({
     userId,
     interaction
   })
