@@ -1,5 +1,7 @@
 function scrollDownChat(){
-	var objDiv = document.getElementById("divPosts");
+	var objDiv1 = document.getElementById("divPosts");
+	var objDiv = objDiv1.children[0].childNodes[1]
+	console.log(objDiv)
 	objDiv.scrollTop = objDiv.scrollHeight;
 }
 
@@ -7,7 +9,11 @@ function SendMessage()
 {
 	var msg = encodeURI(document.getElementById('watson_input').value);
 	var username = document.getElementById('hiddenUsername').value;
-	var chatbot = document.getElementById('divPosts');
+	/* var objDiv1 = document.getElementById("divPosts");
+	var chatbot = = objDiv1.children[0].childNodes[1]
+	console.log(objDiv)
+	console.log(chatbot) */
+	var chatbot = document.getElementById('divPosts'); 
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		
@@ -19,7 +25,7 @@ function SendMessage()
     		snd.play();
 		}
 	};
-	xhttp.open("GET", "/sendMessage?username=" + username + "&message=" + msg, true);
+	xhttp.open("GET", "https://hack-store-smart-sable.mybluemix.net/sendMessage?username=" + username + "&message=" + msg, true);
 	xhttp.send();
 }
 
@@ -29,7 +35,10 @@ function RestartChat(userName){
 
 function InitializeConversation()
 {
+	/* var objDiv1 = document.getElementById("divPosts");
+	var chatbot = objDiv1.children[0].childNodes[1]*/
 	var chatbot = document.getElementById('divPosts');
+/* 	console.log(chatbot);  */
 	var username = document.getElementById('hiddenUsername');
 	var xhttp = new XMLHttpRequest();
 	var url = document.location.toString();

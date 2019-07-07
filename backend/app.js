@@ -1,14 +1,15 @@
 
 var express = require('express');
 var cfenv = require('cfenv');
+var cors = require('cors')
 
 var watson = require('watson-developer-cloud');
 var bodyParser = require('body-parser');
 
 //IAM
 var wconv_version_date = '2018-09-20';
-var wconv_workspaceId = 'e4491663-cfea-4965-a8ed-34700aec8e27';
-var wconv_apikey = '50lRdsM4FRKBKvsNFqMM2B4R1eKk2mPu_65GxRg2iD1x'
+var wconv_workspaceId = '2f65e52d-347a-4d8f-9e27-d3f3283e9146';
+var wconv_apikey = 'FUf1yvngoWhzqjHlGT586q-61aXOmI9GxQP8f_H5nkEN'
 var wconv_url = 'https://gateway.watsonplatform.net/assistant/api'
 
 var app = express();
@@ -16,7 +17,7 @@ var appEnv = cfenv.getAppEnv();
 var session = require('express-session');
 
 /* const itemsRoutes = require('./routes/item') */
-
+app.use(cors())
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());       // to support JSON-encoded bodies
