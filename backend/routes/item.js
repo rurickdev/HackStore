@@ -5,7 +5,7 @@ const router = express.Router();
 const AddInteraction = require('../middlewares/adding_interaccion').addingInteraction
 const Item = require('../usecases/item')
 
-router.get('/', AddInteraction, (req, res) => {
+router.post('/', AddInteraction, (req, res) => {
   const { itemId } = req.body
 
   const item = Item.getItemById(itemId)
@@ -30,6 +30,25 @@ router.get('/', AddInteraction, (req, res) => {
       message: `Item not found`
     }
   }
-})
+});
+
+router.post('/new', async (req, res) => {
+  try {
+    const { name, description, price, shippingCost, keyWords, categories, pictures, seller } = req.body;
+    await Item.create({ name, description, price, shippingCost, keyWords, categories, pictures, seller });
+    res.json({
+      success: true,
+      message: `New item created successfully`
+    });
+  } catch (error) {
+    res.status(500);
+    res.json({
+      success: false,
+      message: `Could not create new item`,
+      error: [error]
+    })
+  }
+  res.json({ name, description, price, shippingCost, keyWords, categories, pictures, seller });
+});
 
 module.exports = router;
