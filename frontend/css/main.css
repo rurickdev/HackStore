@@ -10,9 +10,24 @@
   cursor: pointer;
 }
 
-.abstract-bg {
-  background: url("https://ak7.picdn.net/shutterstock/videos/712807/thumb/1.jpg");
-  background-size: cover;
+.text-purple {
+  color: #6A2983;
+}
+
+.border-purple {
+  border: 1px solid #6A2983;
+}
+
+.bg-light-purple {
+  background: #9F6BB3;
+}
+
+.main-shadow {
+  box-shadow: 5px 5px 5px #acacac;
+}
+
+.bg-gradient {
+  background: linear-gradient(90deg, #6A2983, #320544);
 }
 
 .black-overlay {
@@ -36,7 +51,8 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: rgba(0, 0, 255, 0.1);
+  background: white;
+  color: #320544;
   border-radius: 50%;
   border: none;
   box-shadow: 3px 3px 3px #cdcdcd;
@@ -110,12 +126,21 @@
   right: 0;
 }
 
+.navbar {
+  background: linear-gradient(90deg, #6A2983, #320544);
+}
 .navbar .navbar-nav {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
   text-align: center;
   align-items: center;
+}
+.navbar .navbar-nav a {
+  color: white;
+}
+.navbar .navbar-nav a:hover {
+  text-decoration: underline;
 }
 .navbar form {
   width: 30%;
@@ -152,6 +177,9 @@
 #top-five-slider .slider-control-wrapper .carousel-control-next, #top-five-slider .slider-control-wrapper .carousel-control-prev {
   position: relative;
 }
+#top-five-slider .slider-control-wrapper .carousel-control-next i, #top-five-slider .slider-control-wrapper .carousel-control-prev i {
+  color: #6A2983;
+}
 #top-five-slider .slider-control-wrapper .carousel-indicators {
   position: relative;
 }
@@ -159,9 +187,46 @@
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  background: #333;
+  background: #6A2983;
   box-sizing: border-box;
   border: none;
+}
+
+.suggested-categories {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.suggested-categories .category-wrapper {
+  display: flex;
+  border: 1px solid #6A2983;
+  background: white;
+  flex-basis: 32%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #acacac;
+  margin-bottom: 15px;
+}
+.suggested-categories .category-wrapper img {
+  width: 30%;
+  margin-right: 15px;
+  transition: all 0.5s ease;
+}
+.suggested-categories .category-wrapper img:hover {
+  transform: scale(1.1);
+}
+.suggested-categories .category-wrapper .list-group .list-group-item:hover {
+  color: #9F6BB3;
+  cursor: pointer;
+}
+
+footer {
+  background: linear-gradient(90deg, #320544, #6A2983);
+}
+footer .contact-data i {
+  font-size: 24px;
+  margin-right: 15px;
+}
+footer .social-networks i {
+  font-size: 36px;
 }
 
 /*# sourceMappingURL=main.css.map */

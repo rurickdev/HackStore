@@ -3,12 +3,6 @@ function scrollDownChat(){
 	objDiv.scrollTop = objDiv.scrollHeight;
 }
 
-
-/* function startChat(){
-	var msg = encodeURI(document.getElementById('name').value);
-	document.location = "chat?name=" + msg;
-}
- */
 function SendMessage()
 {
 	var msg = encodeURI(document.getElementById('watson_input').value);
